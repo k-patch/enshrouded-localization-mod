@@ -1,0 +1,13 @@
+{
+  "id": "localization",
+  "name": "Localization",
+  "version": "1.0.0",
+  "capabilities": [
+    "patch"
+  ],
+  "authors": [
+    "github.com/0deep"
+  ],
+  "license": "GPL-3.0",
+  "description": "Applies custom translations for any language via CSV files ({lang}.csv). Licensed under GPL-3.0. Source: https://github.com/Brabb3l/kfc-parser"
+}

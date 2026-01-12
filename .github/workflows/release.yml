@@ -1,0 +1,27 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create Zip Archive
+        run: |
+          mkdir -p mods/localization
+          cp -r mod.json src data LICENSE README.md mods/localization/
+          zip -r localization.zip mods
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: localization.zip
+          generate_release_notes: true
