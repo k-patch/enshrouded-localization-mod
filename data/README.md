@@ -30,13 +30,13 @@ Place your translation CSV files in this directory following this pattern:
 ### How It Works
 
 1. The mod automatically scans this directory for files matching `*.csv`
-2. Extracts the language code from the filename
-3. Applies the translations to the corresponding language entry in the game
-4. Multiple language files can be present - all will be processed
+2. Uses the **first valid translation file** found (pattern: `{lang}.csv`)
+3. Extracts the language code from the filename
+4. Applies the translations to the corresponding language entry in the game
 
 ### Notes
 
-- You can have multiple translation files for different languages
+- Only **one translation file** should be present in the `data` directory
+- Place only the language file you want to use (e.g., `ko_kr.csv` for Korean)
 - Only existing language entries in the game can be modified
-- Newlines in translations: use `\n` in the CSV (will be converted to actual newlines)
-
+- Newlines in translations: use `\\n` in the CSV (will be converted to actual newlines)
